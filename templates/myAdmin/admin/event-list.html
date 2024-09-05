@@ -1,0 +1,205 @@
+{% extends 'common/admin/master.html' %}
+
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event List with Ingredients</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .action-buttons button {
+            margin-right: 5px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .edit-button {
+            background-color: #007bff;
+        }
+
+        .edit-button:hover {
+            background-color: #0056b3;
+        }
+
+        .delete-button {
+            background-color: #dc3545;
+        }
+
+        .delete-button:hover {
+            background-color: #c82333;
+        }
+
+        .add-button {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .add-button:hover {
+            background-color: #218838;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        table tr td {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h2 style="text-align: center;">Event List</h2>
+
+        <table id="eventTable">
+            <thead>
+                <tr>
+                    <th>Event Image</th>
+                    <th>Event Name</th>
+                    <th>Event Details</th>
+                    <th>Event Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically added here -->
+
+                {% for event in events %}
+                <tr>
+                    <td>
+                        <img src="/{{event.event_image}}" alt="" style="width: 70px">
+                    </td>
+                    <td>{{event.event_name}}</td>
+                    <td>{{event.event_description}}</td>
+                    <td>$ {{event.event_price}}</td>
+                    <td>
+                        <div style="display: flex; gap: 20px;">
+                            <a href=""><i class="bi bi-pencil-square"></i></a>
+
+                            <a href="{% url 'deleteEvent' event.id %}"><i class="bi bi-trash"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <a href="{% url 'addEvent' %}"
+            style="display: flex; justify-content: center; align-items: center; gap:10px; color:#000; border: 1px solid #000; width: 250px; border-radius:5px; margin: 0 auto;">
+            <i class="bi bi-plus-circle" style="font-size: 20px;"></i> Add New Event</a>
+    </div>
+
+    <script>
+        function addevent() {
+            const image = document.getElementById('eventImage').files[0] ? URL.createObjectURL(document.getElementById('eventImage').files[0]) : 'placeholder.jpg';
+            const name = document.getElementById('eventName').value;
+            const ingredients = document.getElementById('eventIngredients').value;
+            const price = document.getElementById('eventPrice').value;
+
+            if (name && ingredients && price) {
+                const table = document.getElementById('eventTable').getElementsByTagName('tbody')[0];
+                const newRow = table.insertRow();
+                newRow.innerHTML = `
+                    <td><img src="${image}" alt="event Image" style="width: 50px; height: auto;"></td>
+                    <td>${name}</td>
+                    <td>${ingredients}</td>
+                    <td>${price}</td>
+                    <td class="action-buttons">
+                        <button class="edit-button" onclick="editRow(this)">Edit</button>
+                        <button class="delete-button" onclick="deleteRow(this)">Delete</button>
+                    </td>
+                `;
+                // Clear form
+                document.getElementById('eventImage').value = '';
+                document.getElementById('eventName').value = '';
+                document.getElementById('eventIngredients').value = '';
+                document.getElementById('eventPrice').value = '';
+            } else {
+                alert('Please fill out all fields');
+            }
+        }
+
+        function editRow(button) {
+            const row = button.parentNode.parentNode;
+            document.getElementById('eventImage').value = ''; // Handle image separately if needed
+            document.getElementById('eventName').value = row.cells[1].textContent;
+            document.getElementById('eventIngredients').value = row.cells[2].textContent;
+            document.getElementById('eventPrice').value = row.cells[3].textContent;
+            row.parentNode.removeChild(row);
+        }
+
+        function deleteRow(button) {
+            const row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+</body>
+
+</html>
+
+
+{% endblock body %}

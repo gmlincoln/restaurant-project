@@ -1,0 +1,115 @@
+{% extends 'common/admin/master.html' %}
+
+
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input[type="file"] {
+            border: none;
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1 style="text-align: center;">Edit Food Menu</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="id" value="{{food.id}}" style="display: none;">
+                <label for="image">Upload Image:</label>
+
+                {% if food.food_image %}
+                <h6>Old Image</h6>
+                <img src="/{{food.food_image}}" style="width: 50px;" alt="">
+
+                <br>
+                <br>
+                {% endif %}
+                <h6>Upload New One</h6>
+                <input type="file" id="image" name="fimage">
+            </div>
+            <div class="form-group">
+                <label for="name">Food Name:</label>
+                <input type="text" id="name" name="fname" placeholder="Enter food name" value="{{food.food_name}}"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="name">Ingredient Name:</label>
+                <input type="text" id="name" name="fingredient" placeholder="Enter ingredient name"
+                    value="{{food.food_ingredients}}" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="fprice" placeholder="Enter price" step="0.01"
+                    value="{{food.food_price}}" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+
+{% endblock body %}

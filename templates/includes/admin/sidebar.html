@@ -1,0 +1,81 @@
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'dashboardPage' %}">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-cup-straw"></i><span>Our Menu</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'addFood' %}">
+            <i class="bi bi-plus-square" style="font-size: 20px;"></i> <span> Add Menu</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'foodList' %}">
+            <i class="bi bi-file-earmark-spreadsheet" style="font-size: 20px;"></i><span>Menu List</span>
+          </a>
+        </li>
+
+      </ul>
+    </li><!-- End Menu Nav -->
+
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-calendar-event"></i><span>Events</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'addEvent' %}">
+            <i class="bi bi-plus-square" style="font-size: 20px;"></i> <span> Add Events</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'eventList' %}">
+            <i class="bi bi-file-earmark-spreadsheet" style="font-size: 20px;"></i><span>Events List</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Events Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-people"></i><span>Chefs</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="components-alerts.html">
+            <i class="bi bi-person-add" style="font-size: 20px;"></i> <span> Add Chef</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="bi bi-person-video2" style="font-size: 20px;"></i><span>Chefs List</span>
+          </a>
+        </li>
+
+      </ul>
+    </li><!-- End Chefs Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="pages-blank.html">
+        <i class="bi bi-table"></i>
+        <span>Reserved Table List</span>
+      </a>
+    </li><!--Reserved Tables Nav -->
+
+
+  </ul>
+
+</aside><!-- End Sidebar-->
