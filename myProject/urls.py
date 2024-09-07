@@ -43,12 +43,18 @@ urlpatterns = [
     path('addEvent/', addEvent, name='addEvent'),
     path('eventList/', eventList, name='eventList'),
     path('deleteEvent/<int:id>', deleteEvent, name='deleteEvent'),
+    path('addChef/', addChef, name='addChef'),
+    path('chefList/', chefList, name='chefList'),
+    path('deleteChef/<int:id>', deleteChef, name='deleteChef'),
+    path('updateChef/<int:id>', updateChef, name='updateChef'),
+
     
     
     
     
     
     path('loginPage/', loginPage, name='loginPage'),
+    path('logoutPage/', logoutPage, name='logoutPage'),
     path('registerPage/', registerPage, name='registerPage'),
     
     

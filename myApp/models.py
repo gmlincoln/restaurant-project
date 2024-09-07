@@ -14,3 +14,11 @@ class EventModel(models.Model):
     event_name = models.CharField(max_length=100, null=True)
     event_price = models.FloatField(null=True)
     event_description = models.TextField(max_length=500, null=True)
+
+
+class ChefModel(models.Model):
+
+    chef_image = models.ImageField(upload_to='Media/Chef_Pic', null=True)
+    chef_name = models.CharField(max_length=100, null=True)
+    chef_type = models.CharField(max_length=70, null=True)
+    chef_details= models.TextField(max_length=300)

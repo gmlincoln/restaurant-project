@@ -1,29 +1,29 @@
 <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container position-relative d-flex align-items-center justify-content-between">
+  <div class="container position-relative d-flex align-items-center justify-content-between">
 
-      <a href="{% url 'homePage' %}" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Yummy</h1>
-        <span>.</span>
-      </a>
+    <a href="{% url 'homePage' %}" class="logo d-flex align-items-center me-auto me-xl-0">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Yummy</h1>
+      <span>.</span>
+    </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="{% url 'homePage' %}">Home<br></a></li>
-          <li><a href="{% url 'aboutPage' %}">About</a></li>
-          <li><a href="{% url 'menuPage' %}">Menu</a></li>
-          <li><a href="{% url 'eventsPage' %}">Events</a></li>
-          <li><a href="{% url 'chefsPage' %}">Chefs</a></li>
-          <!-- <li><a href="#gallery">Gallery</a></li> -->
-          
-          <li><a href="{% url 'contactPage' %}">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="{% url 'homePage' %}">Home<br></a></li>
+        <li><a href="{% url 'aboutPage' %}">About</a></li>
+        <li><a href="{% url 'menuPage' %}">Menu</a></li>
+        <li><a href="{% url 'eventsPage' %}">Events</a></li>
+        <li><a href="{% url 'chefsPage' %}">Chefs</a></li>
+        <!-- <li><a href="#gallery">Gallery</a></li> -->
 
-      <a class="btn-getstarted" href="{% url 'bookTable' %}">Book a Table</a>
-      <a class="btn-getstarted" href="{% url 'dashboardPage' %}">Dashboard</a>
+        <li><a href="{% url 'contactPage' %}">Contact</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
 
-    </div>
-  </header>
+    <a class="btn-getstarted" href="{% url 'bookTable' %}">Book a Table</a>
+    <a class="btn-getstarted" href="{% url 'loginPage' %}">Dashboard</a>
+
+  </div>
+</header>
