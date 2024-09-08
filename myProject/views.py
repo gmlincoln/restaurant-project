@@ -48,8 +48,32 @@ def contactPage(req):
     return render(req, 'myAdmin/user/contact.html')
 
 def bookTable(req):
+
+    if req.method == 'POST':
+
+        customer_name = req.POST.get('cname')
+        email = req.POST.get('cemail')
+        phone = req.POST.get('cphone')
+        booking_date = req.POST.get('cdate')
+        booking_time = req.POST.get('ctime')
+        no_of_people = req.POST.get('cpeople')
+        message = req.POST.get('cmessage')
+
+        tables = ReservedTableModel(
+            customer_name = customer_name,
+            email = email,
+            phone = phone,
+            booking_date = booking_date,
+            booking_time = booking_time,
+            no_of_people = no_of_people,
+            message = message
+        )
+        tables.save()
+        return HttpResponse(f"Hello {tables.customer_name} Sir! Thanks for Booking!")
+    
     
     return render(req, 'myAdmin/user/book-table.html')
+
 
 
 """
@@ -253,6 +277,24 @@ def deleteChef(req,id):
     data.delete()
 
     return redirect('chefList')
+
+
+@login_required
+def reservedTable(req):
+
+    tables = ReservedTableModel.objects.all()
+
+    return render(req, 'myAdmin/admin/book-table-list.html', {'tables':tables})
+
+
+@login_required
+def deleteBooking(req,id):
+
+    data = ReservedTableModel.objects.filter(id=id)
+
+    data.delete()
+
+    return redirect('reservedTable')
 
 
 """

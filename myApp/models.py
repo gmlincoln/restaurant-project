@@ -22,3 +22,15 @@ class ChefModel(models.Model):
     chef_name = models.CharField(max_length=100, null=True)
     chef_type = models.CharField(max_length=70, null=True)
     chef_details= models.TextField(max_length=300)
+
+
+
+class ReservedTableModel(models.Model):
+
+    customer_name = models.CharField(max_length=100, null=True)
+    email =  models.CharField(max_length=100, null=True)
+    phone = models.CharField(max_length=20, null=True)
+    booking_date = models.DateField(null=True)
+    booking_time = models.TimeField(null=True)
+    no_of_people = models.PositiveIntegerField(null=True)
+    message = models.TextField(max_length=300, null=True)

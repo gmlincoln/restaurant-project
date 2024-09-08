@@ -47,6 +47,8 @@ urlpatterns = [
     path('chefList/', chefList, name='chefList'),
     path('deleteChef/<int:id>', deleteChef, name='deleteChef'),
     path('updateChef/<int:id>', updateChef, name='updateChef'),
+    path('reservedTable', reservedTable, name='reservedTable'),
+    path('deleteBooking/<int:id>', deleteBooking, name='deleteBooking'),
 
     
     

@@ -12,29 +12,41 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Amatic SC",  sans-serif;
-  --nav-font: "Inter",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Amatic SC", sans-serif;
+  --nav-font: "Inter", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #37373f; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ce1212; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+:root {
+  --background-color: #ffffff;
+  /* Background color for the entire website, including individual sections */
+  --default-color: #212529;
+  /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #37373f;
+  /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #ce1212;
+  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff;
+  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff;
+  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #7f7f90;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ce1212; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #7f7f90; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ce1212; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #7f7f90;
+  /* The default color of the main navmenu links */
+  --nav-hover-color: #ce1212;
+  /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff;
+  /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff;
+  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #7f7f90;
+  /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #ce1212;
+  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -168,7 +180,7 @@ h6 {
 
 /* PHP Email Form Messages
 ------------------------------*/
-.php-email-form .error-message {
+.book-table-form .error-message {
   display: none;
   background: #df1529;
   color: #ffffff;
@@ -178,7 +190,7 @@ h6 {
   font-weight: 600;
 }
 
-.php-email-form .sent-message {
+.book-table-form .sent-message {
   display: none;
   color: #ffffff;
   background: #059652;
@@ -188,7 +200,7 @@ h6 {
   font-weight: 600;
 }
 
-.php-email-form .loading {
+.book-table-form .loading {
   display: none;
   background: var(--surface-color);
   text-align: center;
@@ -196,7 +208,7 @@ h6 {
   margin-bottom: 24px;
 }
 
-.php-email-form .loading:before {
+.book-table-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -205,10 +217,10 @@ h6 {
   margin: 0 10px -6px 0;
   border: 3px solid var(--accent-color);
   border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
+  animation: book-table-form-loading 1s linear infinite;
 }
 
-@keyframes php-email-form-loading {
+@keyframes book-table-form-loading {
   0% {
     transform: rotate(0deg);
   }
@@ -1444,22 +1456,22 @@ section,
   background: color-mix(in srgb, var(--default-color), transparent 97%);
 }
 
-.book-a-table .php-email-form {
+.book-a-table .book-table-form {
   padding: 30px;
 }
 
 @media (max-width: 575px) {
-  .book-a-table .php-email-form {
+  .book-a-table .book-table-form {
     padding: 20px;
   }
 }
 
-.book-a-table .php-email-form input[type=text],
-.book-a-table .php-email-form input[type=email],
-.book-a-table .php-email-form input[type=number],
-.book-a-table .php-email-form input[type=date],
-.book-a-table .php-email-form input[type=time],
-.book-a-table .php-email-form textarea {
+.book-a-table .book-table-form input[type=text],
+.book-a-table .book-table-form input[type=email],
+.book-a-table .book-table-form input[type=number],
+.book-a-table .book-table-form input[type=date],
+.book-a-table .book-table-form input[type=time],
+.book-a-table .book-table-form textarea {
   font-size: 14px;
   padding: 10px 15px;
   box-shadow: none;
@@ -1469,25 +1481,25 @@ section,
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
-.book-a-table .php-email-form input[type=text]:focus,
-.book-a-table .php-email-form input[type=email]:focus,
-.book-a-table .php-email-form input[type=number]:focus,
-.book-a-table .php-email-form input[type=date]:focus,
-.book-a-table .php-email-form input[type=time]:focus,
-.book-a-table .php-email-form textarea:focus {
+.book-a-table .book-table-form input[type=text]:focus,
+.book-a-table .book-table-form input[type=email]:focus,
+.book-a-table .book-table-form input[type=number]:focus,
+.book-a-table .book-table-form input[type=date]:focus,
+.book-a-table .book-table-form input[type=time]:focus,
+.book-a-table .book-table-form textarea:focus {
   border-color: var(--accent-color);
 }
 
-.book-a-table .php-email-form input[type=text]::placeholder,
-.book-a-table .php-email-form input[type=email]::placeholder,
-.book-a-table .php-email-form input[type=number]::placeholder,
-.book-a-table .php-email-form input[type=date]::placeholder,
-.book-a-table .php-email-form input[type=time]::placeholder,
-.book-a-table .php-email-form textarea::placeholder {
+.book-a-table .book-table-form input[type=text]::placeholder,
+.book-a-table .book-table-form input[type=email]::placeholder,
+.book-a-table .book-table-form input[type=number]::placeholder,
+.book-a-table .book-table-form input[type=date]::placeholder,
+.book-a-table .book-table-form input[type=time]::placeholder,
+.book-a-table .book-table-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.book-a-table .php-email-form button[type=submit] {
+.book-a-table .book-table-form button[type=submit] {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
@@ -1496,7 +1508,7 @@ section,
   border-radius: 4px;
 }
 
-.book-a-table .php-email-form button[type=submit]:hover {
+.book-a-table .book-table-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
@@ -1598,7 +1610,7 @@ section,
   color: var(--accent-color);
 }
 
-.contact .php-email-form {
+.contact .book-table-form {
   background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -1606,14 +1618,14 @@ section,
 }
 
 @media (max-width: 575px) {
-  .contact .php-email-form {
+  .contact .book-table-form {
     padding: 20px;
   }
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
+.contact .book-table-form input[type=text],
+.contact .book-table-form input[type=email],
+.contact .book-table-form textarea {
   color: var(--default-color);
   background-color: color-mix(in srgb, var(--surface-color), transparent 50%);
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
@@ -1623,19 +1635,19 @@ section,
   border-radius: 0;
 }
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
+.contact .book-table-form input[type=text]:focus,
+.contact .book-table-form input[type=email]:focus,
+.contact .book-table-form textarea:focus {
   border-color: var(--accent-color);
 }
 
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
+.contact .book-table-form input[type=text]::placeholder,
+.contact .book-table-form input[type=email]::placeholder,
+.contact .book-table-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .book-table-form button[type=submit] {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
@@ -1644,13 +1656,6 @@ section,
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .book-table-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
 }

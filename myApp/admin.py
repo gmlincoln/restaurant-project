@@ -6,3 +6,4 @@ from .models import *
 admin.site.register(FoodModel)
 admin.site.register(EventModel)
 admin.site.register(ChefModel)
+admin.site.register(ReservedTableModel)
